@@ -1,12 +1,17 @@
 package com.svail.rank_algorithm;
 
-import java.util.Comparator;
 
 /**
  * Created by ZhouXiang on 2016/7/13.
  */
 public class InsertionSort {
-    public static void insertionSort(Integer[] array){
+    /**
+     *
+     * @param array 数组
+     * @param sorttype 排序类型,Sort.DESC,Sort.ASC
+     * @return
+     */
+    public static Integer[]  insertionSort(Integer[] array,boolean sorttype){
         int j;
         for(int i=0;i<array.length;i++){
             int tmp=array[i];
@@ -16,9 +21,7 @@ public class InsertionSort {
             array[j]=tmp;
         }
 
-        for(int i=0;i<array.length;i++){
-            System.out.println(array[i]);
-        }
+       return array;
     }
 
 }
