@@ -5,38 +5,28 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!-- 基本设置 -->
-    <groupId>...</groupId>
-    <artifactId>...</artifactId>
-    <version>...</version>
-    <packaging>...</packaging>
-    <dependencies>...</dependencies>
-    <parent>...</parent>
-    <dependencyManagement>...</dependencyManagement>
-    <modules>...</modules>
-    <properties>...</properties>
+    <groupId>com.bigdataXiang</groupId>
+    <artifactId>DataStruct</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+    <dependencies>
+
+    </dependencies>
+
+    <modules></modules>
+    <properties>
+        <java-version>1.8</java-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <!-- 构建过程的设置 -->
-    <build>...</build>
-    <reporting>...</reporting>
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+    </build>
 
     <!-- 项目信息设置 -->
     <name>DataStruct</name>
-    <description>...</description>
-    <url>...</url>
-    <inceptionYear>...</inceptionYear>
-    <licenses>...</licenses>
-    <organization>...</organization>
-    <developers>...</developers>
-    <contributors>...</contributors>
+    <description>数据结构与算法</description>
+    <url>https://github.com/bigdataXiang/DataStruct</url>
 
-    <!-- 环境设置 -->
-    <issueManagement>...</issueManagement>
-    <ciManagement>...</ciManagement>
-    <mailingLists>...</mailingLists>
-    <scm>...</scm>
-    <prerequisites>...</prerequisites>
-    <repositories>...</repositories>
-    <pluginRepositories>...</pluginRepositories>
-    <distributionManagement>...</distributionManagement>
-    <profiles>...</profiles>
 </project>
