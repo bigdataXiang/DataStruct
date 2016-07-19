@@ -1,7 +1,8 @@
-package com.svail;
+package com.bigdataXiang;
 
-import com.svail.rank_algorithm.InsertionSort;
-import com.svail.rank_algorithm.Sort;
+import com.bigdataXiang.sort.InsertionSort;
+import com.bigdataXiang.sort.SelectionSort;
+import com.bigdataXiang.sort.Sortable;
 
 
 public class Main {
@@ -12,8 +13,8 @@ public class Main {
             System.out.print(i+"\t");
         }
         System.out.println();
-        Integer[] arr=InsertionSort.insertionSort(array, Sort.ASC);
-        for (int i:arr) {
+        SelectionSort.sort(array);
+        for (int i:array) {
             System.out.print(i+"\t");
         }
     }
