@@ -11,10 +11,11 @@ import java.util.Date;
 public class TestSort {
 
     public static void main(String[] args) {
-        Integer[] a1=new RandomArray(5,0,5).getArray();
+        Integer[] a1=new RandomArray(100,0,100).getArray();
 
         //testSelectionSort(a1);
         testQuickSort(a1);
+        Sortable.print(a1);
     }
     public static void testSelectionSort(Integer[] a1){
         long start=new Date().getTime();
