@@ -20,7 +20,8 @@ public class Sortable {
      * @return
      */
     protected static boolean less(Comparable a,Comparable b){
-        return a.compareTo(b)<0;
+
+        return a.compareTo(b)<=0;
     }
 
     /**
@@ -34,6 +35,22 @@ public class Sortable {
         array[a]=array[b];
         array[b]=t;
     }
+    /**
+     * 打印数组a中的所有元素
+     * @param a
+     */
+    public static void printArray(Comparable[] a){
+        for(int i=0;i<a.length;i++){
+            System.out.println(a[i]);
+        }
+    }
 
+    public static boolean isSorted(Comparable[] a){
+        for(int i=0;i<a.length;i++){
+            if(less(a[i],a[i-1]))
+                return false;
+        }
+        return true;
+    }
 
 }
