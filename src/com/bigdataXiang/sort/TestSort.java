@@ -11,24 +11,26 @@ import java.util.Date;
 public class TestSort {
 
     public static void main(String[] args) {
-        Integer[] a1=new RandomArray(5,0,5).getArray();
-
-        //testSelectionSort(a1);
+        Integer[] a1=new RandomArray(100000,0,1000000).getArray();
+        //Sortable.print(a1);
+        testSelectionSort(a1);
+        a1=new RandomArray(100000,0,1000000).getArray();
         testQuickSort(a1);
+        //Sortable.print(a1);
     }
     public static void testSelectionSort(Integer[] a1){
         long start=new Date().getTime();
-        Log.v("选择排序(n="+a1.length+"):\n");
+        Log.v("\n选择排序(n="+a1.length+"):");
         SelectionSort.sort(a1);
         long end=new Date().getTime();
-        Log.v("花费时间:"+(end-start)+"毫秒");
+        Log.v("\n花费时间:"+(end-start)+"毫秒");
     }
     public static void testQuickSort(Integer[] a1){
         long start=new Date().getTime();
-        Log.v("快速排序(n="+a1.length+"):\n");
+        Log.v("\n快速排序(n="+a1.length+"):");
         QuickSort.sort(a1);
         long end=new Date().getTime();
-        Log.v("花费时间:"+(end-start)+"毫秒");
+        Log.v("\n花费时间:"+(end-start)+"毫秒");
     }
 
 }

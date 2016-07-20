@@ -21,9 +21,12 @@ public class Sortable {
      */
     protected static boolean less(Comparable a,Comparable b){
 
-        return a.compareTo(b)<=0;
+        return a.compareTo(b)<0;
     }
+    protected static boolean big(Comparable a,Comparable b){
 
+        return a.compareTo(b)>0;
+    }
     /**
      * 交换
      * @param array
@@ -39,9 +42,10 @@ public class Sortable {
      * 打印数组a中的所有元素
      * @param a
      */
-    public static void printArray(Comparable[] a){
+    public static void print(Comparable[] a){
+        System.out.println();
         for(int i=0;i<a.length;i++){
-            System.out.println(a[i]);
+            System.out.print(a[i]+"\t");
         }
     }
 
