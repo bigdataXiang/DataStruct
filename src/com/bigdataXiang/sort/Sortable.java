@@ -43,8 +43,9 @@ public class Sortable {
      * @param a
      */
     public static void print(Comparable[] a){
+        System.out.println();
         for(int i=0;i<a.length;i++){
-            System.out.println(a[i]+"\t");
+            System.out.print(a[i]+"\t");
         }
     }
 

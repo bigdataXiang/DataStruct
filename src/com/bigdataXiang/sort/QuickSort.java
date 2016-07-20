@@ -26,42 +26,27 @@ public class QuickSort extends Sortable {
 
         //step1:选择一个划分标准，一般使用数组第一个元素
         Comparable comparer = array[from];
-        //step2:从两边同时开始和comparer做对比，同时进行一次交换
+        //step2:从两边同时开始和comparer做对比，分别找到可以交换的元素,同时进行一次交换,使得两侧一边小、一边大
+
         int i=from,j=to;
-
-        while (i<j){
-
-            //从左侧开始，找到一个大的
-            int big=findfirstBigIndexFromLeft(array,i,comparer);
-
-
-            //从右侧开始，找到一个小的
-            int small=findfirstSmallIndexFromRight(array,j,comparer);
-
-
-            exch(array, big, small);
-            i=big+1;
-            j=small-1;
-            //之所以要在 顶层while里面，做2个while，是为了完成一个交换
+        while(i<j)
+        {
+            j=findSmall(array,comparer,i,j);
+            array[i] = array[j];
+            i=findBig(array,comparer,i,j);
+            array[j] = array[i];
         }
-        int comparableSortedIndex=i;
-        array[comparableSortedIndex]=comparer;
-        return comparableSortedIndex;
-    }
-    private static int findfirstBigIndexFromLeft(Comparable[] arr,int from,Comparable comparable){
-        int i=from;
-        for(;i<arr.length;i++){
-            if(big(arr[i],comparable))
-                return i;
-        }
+        array[i] = comparer;
         return i;
     }
-    private static int findfirstSmallIndexFromRight(Comparable[] arr,int to,Comparable comparable){
-        int i=to;
-        for(;i>arr.length;i--){
-            if(less(arr[i],comparable))
-                return i;
-        }
-        return to;
+    public static int findSmall(Comparable[] array,Comparable comparer,int left,int j){
+        while(left<j && !less(array[j],comparer))//从右侧开始向左找,找第一个小于等于comparer的元素
+            j--;
+        return j;
+    }
+    public static int findBig(Comparable[] array,Comparable comparer,int i,int right){
+        while(i<right&& !less(comparer,array[i]))//从左侧开始向右找,找第一个大于等于comparer的元素
+            i++;
+        return i;
     }
 }
