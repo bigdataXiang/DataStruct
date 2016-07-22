@@ -24,6 +24,7 @@ public class TestSort {
         SelectionSort.sort(a1);
         long end=new Date().getTime();
         Log.v("\n花费时间:"+(end-start)+"毫秒");
+        Log.v("\n是否排序完成:"+Sortable.isSorted(a1));
     }
     public static void testQuickSort(Integer[] a1){
         long start=new Date().getTime();
@@ -31,6 +32,7 @@ public class TestSort {
         QuickSort.sort(a1);
         long end=new Date().getTime();
         Log.v("\n花费时间:"+(end-start)+"毫秒");
+        Log.v("\n是否排序完成:"+Sortable.isSorted(a1));
     }
 
 }

@@ -1,6 +1,6 @@
-数据结构（JAVA版）
-===========
-一、排序算法
+# 数据结构（JAVA版）
 
-1、插入算法
-    插入算法由N-1趟排序组成，对于p=1到N-1趟，插入排序保证从位置0到位置p上的元素已经为排序状态。
+## 目录
+
++ [排序](/src/com/bigdataXiang/sort)
++ [JAVA内部的容器类](/src/com/bigdataXiang/collection)

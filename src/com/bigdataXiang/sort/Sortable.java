@@ -50,7 +50,7 @@ public class Sortable {
     }
 
     public static boolean isSorted(Comparable[] a){
-        for(int i=0;i<a.length;i++){
+        for(int i=1;i<a.length;i++){
             if(less(a[i],a[i-1]))
                 return false;
         }
