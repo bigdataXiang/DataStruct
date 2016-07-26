@@ -1,6 +1,7 @@
 package com.bigdataXiang;
 
 import com.bigdataXiang.sort.InsertionSort;
+import com.bigdataXiang.sort.Merge;
 import com.bigdataXiang.sort.SelectionSort;
 import com.bigdataXiang.sort.Sortable;
 
@@ -13,7 +14,7 @@ public class Main {
             System.out.print(i+"\t");
         }
         System.out.println();
-        SelectionSort.sort(array);
+        Merge.sort(array);
         for (int i:array) {
             System.out.print(i+"\t");
         }

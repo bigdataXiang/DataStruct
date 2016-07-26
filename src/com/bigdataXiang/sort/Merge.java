@@ -5,13 +5,36 @@ package com.bigdataXiang.sort;
  */
 public class Merge extends Sortable{
     public static Comparable[] aux;
+    public static void sort(Comparable[] a){
+         aux=new Comparable[a.length];
+        sort(a,0,a.length-1);
+    }
+    public static void sort(Comparable[] a,int lo,int hi){
+        //将a[lo...hi]排序
+        if(hi<=lo){
+            return;
+        }
+        int mid=lo+(hi-lo)/2;
+        sort(a,lo,mid);
+        sort(a,mid+1,hi);
+        merge(a,lo,mid,hi);
+
+    }
+
+    /**
+     * 归并
+     * @param a
+     * @param lo
+     * @param mid
+     * @param hi
+     */
     public static void merge(Comparable[] a,int lo,int mid ,int hi){
         //将数组中的low到mid中元素、mid+1到hi元素归并
         int i=lo;
         int j=hi;
 
         //将a数组赋值给aux数组
-        aux=new Comparable[a.length];
+        //aux=new Comparable[a.length];
         for(int k=lo;k<a.length;k++){
             aux[k]=a[k];
         }
