@@ -12,7 +12,7 @@ public class Shell extends Sortable{
 				for(int j=i;j>=h&&less(a[j],a[j-h]);j-=h){
 					//show(a);
 					exch(a,j,j-h);
-					System.out.println("������"+a[j]+"  "+a[j-h]);
+					System.out.println(""+a[j]+"  "+a[j-h]);
 					print(a);
 				}
 			}
