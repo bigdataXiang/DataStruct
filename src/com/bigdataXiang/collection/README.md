@@ -10,9 +10,10 @@
 
 ## collection
 
-Set是一个不包含重复元素的collection
+### Set是一个不包含重复元素的collection
 
 + HashSet : HashSet类按照哈希算法来存取集合中的对象，存取速度比较快 
 
 + TreeSet : TreeSet类实现了SortedSet接口，能够对集合中的对象进行排序。
 
+### List(请复习)
