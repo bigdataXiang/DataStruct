@@ -25,7 +25,7 @@ public class Main {
 //        for (int i:array) {
 //            System.out.print(i+"\t");
 //        }
-        System.out.println("输入字符串：");
+      /*  System.out.println("输入字符串：");
         Scanner in=new Scanner(System.in);
         String str=in.nextLine();
         boolean appear=false;
@@ -47,6 +47,35 @@ public class Main {
         for(int i=0;i<substr.size();i++){
             System.out.print(substr.get(i));
         }
+*/
+        boolean end=false;
+        int  current=0;
+        while (!end){
+            System.out.println("装订文件数binding:");
+            Scanner in=new Scanner(System.in);
+            int binding=in.nextInt();
+            current+=binding;
+
+            System.out.println("摘除文件数remove:");
+            in=new Scanner(System.in);
+            int remove=in.nextInt();
+
+
+
+            if(remove>current){
+                current=0;
+            }else {
+                current-=remove;
+            }
+            System.out.println("当前文件数current:"+current);
+
+            System.out.println("是否结束计算？true/false:");
+            in=new Scanner(System.in);
+            end=in.nextBoolean();
+
+        }
+
+
 
     }
 }
