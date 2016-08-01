@@ -1,6 +1,7 @@
 package com.bigdataXiang.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -143,5 +144,49 @@ public class Day1 {
                 }
             }
         }
+    }
+
+    /**
+     * 判断s和t是否是两个颠倒顺序形成的字
+     * @param s
+     * @param t
+     * @return
+     */
+    public static boolean isAnagram(String s, String t) {
+        boolean result=true;
+        char[] s_char;
+        char[] t_char;
+        s_char=s.toCharArray();
+        t_char=t.toCharArray();
+        if(s_char.length==t_char.length){
+            Arrays.sort(s_char);
+            Arrays.sort(t_char);
+            if(Arrays.equals(s_char,t_char)){
+                result=true;
+            }else{
+                result=false;
+            }
+        }else{
+            result=false;
+        }
+        return result;
+
+    }
+
+    /**
+     * 答案
+     * @param s
+     * @param t
+     * @return
+     */
+    public boolean isAnagram_(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        char[] str1 = s.toCharArray();
+        char[] str2 = t.toCharArray();
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+        return Arrays.equals(str1, str2);
     }
 }

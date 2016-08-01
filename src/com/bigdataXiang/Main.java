@@ -26,11 +26,14 @@ public class Main {
 //        for (int i:array) {
 //            System.out.print(i+"\t");
 //        }
-        int[] num={0,1,0,3,12};
-        Day1.moveZeroes_(num);
-        for(int i = 0;i<num.length;i++){
-            System.out.println(num[i]);
-        }
+//        int[] num={0,1,0,3,12};
+//        Day1.moveZeroes_(num);
+//        for(int i = 0;i<num.length;i++){
+//            System.out.println(num[i]);
+//        }
+        String s="car";
+        String t="cat";
+        System.out.print(Day1.isAnagram(s,t));
 
 
 
