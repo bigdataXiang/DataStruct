@@ -33,5 +33,26 @@ public class Day2{
 			 reverse+=ch+" ";
 		 }
 		 System.out.println(reverse);
+	}
+	
+	/*输入两个整数，不使用四则运算求出这两个数的和 
+	分析加法运算对应的位运算： 
+	1 等价于两个数先做异或运算 – 相当于不考虑进位的加法 
+	2 然后按位与运算并将与运算的和左移一位 – 相当于考虑进位 
+	3 将1中的结果赋值给第一个数，将2中的结果赋值给第二个数 
+	4 如果第二个数不为0，重复1 2 3*/
+	public static int add(int num1, int num2){
+		int sum = 0;
+        int carry = 0;
+        do{
+            sum = num1 ^ num2;
+            carry = (num1 & num2)<<1;
+
+            num1 = sum;
+            num2 = carry;
+        }while(carry != 0);
+
+        return num1;
+    }
 		 
 	}
