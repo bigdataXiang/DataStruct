@@ -16,6 +16,7 @@ public class 过滤素数 {
         test(10000);
         test(100000);
         test(1000000);
+        test(10000000);
     }
 
     public static void test(int n) {
@@ -45,6 +46,7 @@ public class 过滤素数 {
     public boolean Is素数(int number) {
         boolean result = true;
         for (int i = 0; i < 素数表.size(); i++) {
+            //如过一个数,不是素数,则它的因子中,肯定有一个小于Math.sqrt(number)
             if (素数表.get(i) > Math.sqrt(number)) break;
 
             if (number % 素数表.get(i) == 0) {
