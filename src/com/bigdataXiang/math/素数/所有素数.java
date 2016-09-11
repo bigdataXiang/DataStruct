@@ -3,6 +3,7 @@ package com.bigdataXiang.math.素数;
 import com.bigdataXiang.util.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -10,10 +11,19 @@ import java.util.List;
  */
 public class 所有素数 {
     public static void main(String[] args) {
-        Log.v(new 所有素数().Compute(100));
+        long start = new Date().getTime();
+        Log.v(new 所有素数().DirectCompute(1000000));
+        long end = new Date().getTime();
+        Log.v(end - start);
     }
 
-    public List<Integer> Compute(int input) {
+    /**
+     * (1000000)=137313
+     *
+     * @param input
+     * @return
+     */
+    public List<Integer> DirectCompute(int input) {
         List<Integer> nums = new ArrayList<Integer>();
 
         for (int i = 1; i < input; i++) {
