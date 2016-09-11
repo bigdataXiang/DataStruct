@@ -45,6 +45,8 @@ public class 过滤素数 {
     public boolean Is素数(int number) {
         boolean result = true;
         for (int i = 0; i < 素数表.size(); i++) {
+            if (素数表.get(i) > Math.sqrt(number)) break;
+
             if (number % 素数表.get(i) == 0) {
                 result = false;
                 break;
