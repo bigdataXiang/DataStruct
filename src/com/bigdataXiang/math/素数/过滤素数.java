@@ -25,7 +25,7 @@ public class 过滤素数 {
         Log.v(n, "\t", end - start);
     }
 
-    public List<Integer> 素数表 = new ArrayList<Integer>();
+    private List<Integer> 素数表 = new ArrayList<Integer>();
 
     /**
      * (1000000)=11628
@@ -42,7 +42,7 @@ public class 过滤素数 {
         return 素数表;
     }
 
-    private boolean Is素数(int number) {
+    public boolean Is素数(int number) {
         boolean result = true;
         for (int i = 0; i < 素数表.size(); i++) {
             if (number % 素数表.get(i) == 0) {
