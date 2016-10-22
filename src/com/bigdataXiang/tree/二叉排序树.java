@@ -29,6 +29,6 @@ public class 二叉排序树<T> extends 二叉树{
         for(int i:arr){
             b2.add(i);
         }
-        Log.v(b2.中序遍历_非递归());
+        Log.v(b2.中序遍历());
     }
 }
