@@ -2,7 +2,6 @@ package com.bigdataXiang.tree;
 
 import com.bigdataXiang.util.Log;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
@@ -10,21 +9,14 @@ import java.util.Stack;
 /**
  * Created by timeloveboy on 2016/10/22.
  */
-public class 二叉树<T> {
-    private TreeNode<T> root;
-
-    public 二叉树() {
-    }
-
-    public 二叉树(TreeNode<T> root) {
-        this.root = root;
-    }
+public class 二叉树<T>{
+    protected BinaryNode  root;
 
     //先序遍历（非递归）
-    public List<TreeNode<T>> 先序遍历_非递归() {
-        List<TreeNode<T>> output=new LinkedList<TreeNode<T>>();
-        Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
-        TreeNode<T> node = root;
+    public List<BinaryNode> 先序遍历_非递归() {
+        List<BinaryNode> output=new LinkedList<BinaryNode>();
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
+        BinaryNode node = root;
         while (node != null || !stack.isEmpty()) {
             while (node != null) {
                 output.add(node);
@@ -37,10 +29,10 @@ public class 二叉树<T> {
         return output;
     }
     //中序遍历（非递归）
-    public List<TreeNode<T>> 中序遍历_非递归() {
-        List<TreeNode<T>> output=new LinkedList<TreeNode<T>>();
-        Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
-        TreeNode<T> node = root;
+    public List<BinaryNode> 中序遍历_非递归() {
+        List<BinaryNode> output=new LinkedList<BinaryNode>();
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
+        BinaryNode node = root;
         while (node != null || !stack.isEmpty()) {
 
             while (node != null) {
@@ -55,11 +47,11 @@ public class 二叉树<T> {
         return output;
     }
     //后序遍历（非递归）
-    public List<TreeNode<T>> 后序遍历_非递归() {
-        List<TreeNode<T>> output=new LinkedList<TreeNode<T>>();
-        Stack<TreeNode<T>> stack = new Stack<TreeNode<T>>();
-        TreeNode<T> node = root;
-        TreeNode<T> preNode = null;//表示最近一次访问的节点
+    public List<BinaryNode> 后序遍历_非递归() {
+        List<BinaryNode> output=new LinkedList<BinaryNode>();
+        Stack<BinaryNode> stack = new Stack<BinaryNode>();
+        BinaryNode node = root;
+        BinaryNode preNode = null;//表示最近一次访问的节点
         while (node != null || !stack.isEmpty()) {
 
             while (node != null) {
@@ -82,14 +74,14 @@ public class 二叉树<T> {
 
     }
     public static void main(String[] args) {
-        二叉树<Integer> tree = new 二叉树<Integer>();
-        tree.root = new TreeNode<>(0);
-        tree.root.setLeft(new TreeNode(1));
-        tree.root.setRight(new TreeNode(2));
-        tree.root.getLeft().setLeft(new TreeNode(3));
-        tree.root.getLeft().setRight(new TreeNode(4));
-        tree.root.getRight().setLeft(new TreeNode(5));
-        tree.root.getRight().setRight(new TreeNode(6));
+        二叉树<Integer> tree = new 二叉树<>();
+        tree.root = new BinaryNode<>(0);
+        tree.root.setLeft(new BinaryNode(1));
+        tree.root.setRight(new BinaryNode(2));
+        tree.root.getLeft().setLeft(new BinaryNode(3));
+        tree.root.getLeft().setRight(new BinaryNode(4));
+        tree.root.getRight().setLeft(new BinaryNode(5));
+        tree.root.getRight().setRight(new BinaryNode(6));
 
         Log.v(tree.先序遍历_非递归());
         Log.v(tree.中序遍历_非递归());

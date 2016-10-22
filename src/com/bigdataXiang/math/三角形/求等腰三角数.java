@@ -25,7 +25,7 @@ public class 求等腰三角数 {
                     continue;
                 }
                 if(a*a+b*b-c*c==0){
-                    //Log.v("    ",a,"+",b,"+",c,"=",a+b+c);
+                    Log.v("    ",a,"+",b,"+",c,"=",a+b+c);
                     count++;
                 }
             }
