@@ -24,6 +24,18 @@ public class BinaryNode<T> extends ComparedNode{
         return right;
     }
 
+    public void 水平翻转() {
+
+        BinaryNode exchange = left;
+        left = this.right;
+        right = exchange;
+        if (this.left != null) {
+            this.left.水平翻转();
+        }
+        if (this.right != null) {
+            this.right.水平翻转();
+        }
+    }
     public List<BinaryNode> 先序遍历(List<BinaryNode> output){
         output.add(this);
         if(this.left!=null){

@@ -12,6 +12,12 @@ import java.util.Stack;
 public class 二叉树<T>{
     protected BinaryNode  root;
 
+    public void 水平翻转() {
+        if (root == null) {
+            return;
+        }
+        root.水平翻转();
+    }
     //region 非递归
     //先序遍历（非递归）
     public List<BinaryNode> 先序遍历_非递归() {
@@ -88,6 +94,10 @@ public class 二叉树<T>{
         return root.后序遍历(output);
     }
     public static void main(String[] args) {
+        //          0
+        //     1         2
+        //  3     4    5    6
+
         二叉树<Integer> tree = new 二叉树<>();
         tree.root = new BinaryNode<>(0);
         tree.root.setLeft(new BinaryNode(1));
@@ -96,6 +106,11 @@ public class 二叉树<T>{
         tree.root.getLeft().setRight(new BinaryNode(4));
         tree.root.getRight().setLeft(new BinaryNode(5));
         tree.root.getRight().setRight(new BinaryNode(6));
+
+        tree.水平翻转();
+        //          0
+        //     2         1
+        //  6     5    4    3
 
         Log.v("先序遍历",tree.先序遍历());
         Log.v("中序遍历",tree.中序遍历());
