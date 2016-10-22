@@ -36,4 +36,8 @@ public class TreeNode<T> {
         this.right = right;
     }
 
+    @Override
+    public String toString() {
+        return value.toString();
+    }
 }
