@@ -5,17 +5,43 @@ import java.util.List;
 /**
  * Created by timeloveboy on 16/10/20.
  */
-public class BinaryNode<T> extends ComparedNode{
+public class BinaryNode<K, V> extends Node {
+    public BinaryNode getParent() {
+        return parent;
+    }
+
+    public int getHeight() {
+        int nodeheight = 0;
+        if (parent != null) {
+            return 1 + parent.getHeight(nodeheight);
+        } else {
+            return 1 + nodeheight;
+        }
+    }
+
+    public int getHeight(int nodeheight) {
+        if (parent != null) {
+            return 1 + parent.getHeight(nodeheight);
+        } else {
+            return 1 + nodeheight;
+        }
+    }
+
+    private BinaryNode parent;
+
     private BinaryNode left;
     private BinaryNode right;
-    public BinaryNode(T value) {
-        super(value);
+
+    public BinaryNode(K key, V value) {
+        super(key, value);
     }
     public void setLeft(BinaryNode left) {
         this.left =left;
+        this.left.parent = this;
     }
     public void setRight(BinaryNode right) {
         this.right =right;
+        this.right.parent = this;
     }
     public BinaryNode getLeft() {
         return left;

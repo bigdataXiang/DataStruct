@@ -3,15 +3,15 @@ package com.bigdataXiang.tree;
 /**
  * Created by timeloveboy on 2016/10/22.
  */
-public class ComparedNode<T> extends Node implements Comparable{
-    public ComparedNode(T value) {
-        super(value);
+public class ComparedNode<K, V extends Comparable> extends Node implements Comparable {
+    public ComparedNode(K key, V value) {
+        super(key, value);
     }
 
     public int compareTo(Object o) {
         try {
             Double d= Double.parseDouble(o.toString());
-            Double self=Double.parseDouble(super.toString());
+            Double self = Double.parseDouble(getValue().toString());
             if(d-self>0){
                 return 1;
             }else if(d-self==0){

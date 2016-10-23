@@ -9,9 +9,8 @@ import java.util.Stack;
 /**
  * Created by timeloveboy on 2016/10/22.
  */
-public class 二叉树<T>{
+public class 二叉树<K, V> {
     protected BinaryNode  root;
-
     public void 水平翻转() {
         if (root == null) {
             return;
@@ -98,14 +97,14 @@ public class 二叉树<T>{
         //     1         2
         //  3     4    5    6
 
-        二叉树<Integer> tree = new 二叉树<>();
-        tree.root = new BinaryNode<>(0);
-        tree.root.setLeft(new BinaryNode(1));
-        tree.root.setRight(new BinaryNode(2));
-        tree.root.getLeft().setLeft(new BinaryNode(3));
-        tree.root.getLeft().setRight(new BinaryNode(4));
-        tree.root.getRight().setLeft(new BinaryNode(5));
-        tree.root.getRight().setRight(new BinaryNode(6));
+        二叉树<Integer, Integer> tree = new 二叉树<>();
+        tree.root = new BinaryNode<>(0, 0);
+        tree.root.setLeft(new BinaryNode(1, 1));
+        tree.root.setRight(new BinaryNode(2, 2));
+        tree.root.getLeft().setLeft(new BinaryNode(3, 3));
+        tree.root.getLeft().setRight(new BinaryNode(4, 4));
+        tree.root.getRight().setLeft(new BinaryNode(5, 5));
+        tree.root.getRight().setRight(new BinaryNode(6, 6));
 
         tree.水平翻转();
         //          0
@@ -115,5 +114,10 @@ public class 二叉树<T>{
         Log.v("先序遍历",tree.先序遍历());
         Log.v("中序遍历",tree.中序遍历());
         Log.v("后序遍历",tree.后序遍历());
+
+        Log.v(tree.root.getLeft().getLeft().getHeight());
+
+        Log.v(tree.root.getLeft().getLeft().getParent());
+        Log.v(tree.root.getLeft().getLeft().getParent().getParent());
     }
 }
