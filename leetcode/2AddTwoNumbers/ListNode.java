@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by timeloveboy on 17-12-17.
  */
@@ -8,4 +10,5 @@ public class ListNode {
     ListNode(int x) {
         val = x;
     }
+
 }
