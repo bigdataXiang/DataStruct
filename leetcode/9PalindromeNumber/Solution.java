@@ -10,7 +10,6 @@ class Solution {
             return false;
         }
         int i = 1, y = x, number = (int) Math.log10(y) + 1;
-
         while (i <= number / 2) {
 
             int a = y / (int) Math.pow(10, number - i * 2 + 1), b = y % 10;
